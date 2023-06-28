@@ -12,6 +12,7 @@ export const Rick = {
 };
 
 export default [
+   
    {
       id: 1,
       name: 'Rick Sanchez',
@@ -24,6 +25,7 @@ export default [
       },
       image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
    },
+
    {
       id: 2,
       name: 'Morty Smith',
