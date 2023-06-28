@@ -62,26 +62,21 @@ color: rgb(45, 194, 15);
     width: 100%;
     top: 50%;
     left: 50%;
-    opacity: 50;
-    
-    
+    opacity: 10;
     
 }
 .characterImage{
-    display:run-in;
+    display:block;
     width: 100%;
     height:auto ;
-    
-    
-    
-    
-}
-.imageContainer :hover .name{
-    opacity: 1;
-    
     
 }
 .imageContainer :hover .characterImage{
     opacity: 0.4;
    
+}
+.imageContainer :hover .name{
+    opacity: 1;
+    
+    
 }
