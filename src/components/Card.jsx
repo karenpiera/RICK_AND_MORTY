@@ -14,12 +14,8 @@ export default function Card({name,status,species,gender,origin,image,onClose}) 
          <div className={style.atributes}>
 
          <h2>{species}</h2>
-         <h2>{gender}</h2>
-         <h2>{status}</h2>         
-         <h2>{origin}</h2>
-
-          </div>     
-          
+         <h2>{gender}</h2>        
+          </div>            
       </div>
    );
 }
