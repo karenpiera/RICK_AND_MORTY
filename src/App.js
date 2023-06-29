@@ -5,6 +5,7 @@ import Cards from './components/Cards.jsx';
 import { useState } from 'react';
 
 
+
 function App() {
 const [characters,setCharacters] = useState([]);
 
@@ -21,16 +22,12 @@ function searchHandler (id){
    });
 }
 
-function closeHandler (id){
-   let eliminar = characters.filter(character=>character.id !== Number(id));
 
-   setCharacters(eliminar);
-}
 
    return (
       <div className='App'>
          <NavBar onSearch={searchHandler}/>
-         <Cards characters={characters} onClose={closeHandler} />
+         <Cards characters={characters} />
       </div>
    );
 }
