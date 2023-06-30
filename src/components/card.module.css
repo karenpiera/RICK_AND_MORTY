@@ -19,12 +19,12 @@
      
 }
 .cardContainer:hover {
-   
+    background-image: url("../../public/portal.gif");
     filter: saturate(150%);
     border-radius:50%;
 -webkit-border-radius:80%;
-box-shadow: 0px 0px 15px 15px #3411c1;
--webkit-box-shadow: 0px 0px 15px 15px #7f1de0;
+box-shadow: 0px 0px 15px 15px #09d562;
+-webkit-box-shadow: 0px 0px 15px 15px #1de027;
 transform: rotate(360deg);
 -webkit-transform: rotate(360deg);
 transform: scale(1.10);
