@@ -19,15 +19,19 @@ function searchHandler (id){
       } else {
          window.alert('¡No hay personajes con este ID!');
       }
-   });
+   }) .catch(error=>alert("No se encontró el ID!!!"));
 }
 
-
+const onClose = (id)=>{
+   const characterFilter = characters.filter(character=>character.id !== Number(id));
+    //setCharacters([...characters, characterFilter])
+   setCharacters(characterFilter)
+}
 
    return (
       <div className='App'>
          <NavBar onSearch={searchHandler}/>
-         <Cards characters={characters} />
+         <Cards characters={characters} onClose={onClose} />
       </div>
    );
 }
