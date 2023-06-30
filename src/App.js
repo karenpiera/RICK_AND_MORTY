@@ -3,12 +3,13 @@ import NavBar from './components/NavBar';
 import axios from 'axios';
 import Cards from './components/Cards.jsx';
 import { useState } from 'react';
-
+import { Route,Routes, } from 'react-router-dom';
+import About from './components/about';
+import Detail from './components/detail';
 
 
 function App() {
 const [characters,setCharacters] = useState([]);
-
 
 
 function searchHandler (id){
@@ -29,10 +30,23 @@ const onClose = (id)=>{
 }
 
    return (
+      
       <div className='App'>
          <NavBar onSearch={searchHandler}/>
-         <Cards characters={characters} onClose={onClose} />
+          
+<Routes>
+   <Route path='/home' element={<Cards characters={characters} onClose={onClose} /> }/>
+
+   <Route path='/detail/:id' element={<Detail/>}  />
+
+   <Route path='/about' element={<About/>} />
+   
+
+</Routes>
+
       </div>
+      
+     
    );
 }
 

@@ -20,6 +20,7 @@
 }
 .cardContainer:hover {
     background-image: url("../../public/portal.gif");
+    background-size: cover;
     filter: saturate(150%);
     border-radius:50%;
 -webkit-border-radius:80%;

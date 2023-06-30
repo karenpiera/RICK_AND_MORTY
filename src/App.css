@@ -1,3 +1,14 @@
 .App {
    text-align: center;
 }
+
+.closeButton {
+   opacity: 0.7;
+   position: absolute;
+   top: 1px;
+   right:1px;
+}
+.closeButton:hover{
+background-color: rgb(53, 53, 98);
+color: rgb(45, 194, 15);
+}
