@@ -28,10 +28,34 @@ const onClose = (id)=>{
    setCharacters(characterFilter)
 }
 
+function randomHandler (){
+
+   let haveIt=[];
+   let random= (Math.random()*826).toFixed();
+   random= Number(random);
+   if (!haveIt.includes(random)){
+      haveIt.push(random);
+      fetch(`https://rickandmortyapi.com/api/character/${random}`)
+      .then((response) => response.json())
+      .then((data) => {
+            if (data.name) {
+                setCharacters ((oldChars) => [...oldChars, data]);
+            } else {
+
+               window.alert("No hay personajes con ese ID");
+            }
+   });
+ }  else {
+
+   console.log("Ya agregaste todos los personajes"); return false;
+ }
+}
+   
+
    return (
       
       <div className='App'>
-         <NavBar onSearch={searchHandler}/>
+         <NavBar onSearch={searchHandler} random={randomHandler} />
           
 <Routes>
    <Route path='/home' element={<Cards characters={characters} onClose={onClose} /> }/>

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import style from "./search.module.css"
+
+
 export default function SearchBar(props) {
    const {onSearch}=props;
    const[id,setId]= useState("")
@@ -9,7 +11,7 @@ export default function SearchBar(props) {
       let input=e.target.value;
       setId(input);
    }
-
+ 
    
 
    return (

@@ -1,9 +1,8 @@
 import SearchBar from "./SearchBar";
 import { Link } from "react-router-dom";
-import "./Nav.module.css";
+import style from "./Nav.module.css";
 
-
- function NavBar ({onSearch}){
+ function NavBar ({onSearch,random}){
 
     return (
        
@@ -12,10 +11,10 @@ import "./Nav.module.css";
             <Link to="/about" > About</Link>
             <Link to="/home" >Home </Link>
 
-
         </div>
 
     <SearchBar onSearch={onSearch}/>
+    <button  className={style.random} onClick={random}> Random </button>
     </div>
     
     )
