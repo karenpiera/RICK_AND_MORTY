@@ -13,7 +13,6 @@ const [characters,setCharacters] = useState([]);
 
 
 function searchHandler (id){
-
    axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
       if (data.name) {
          setCharacters((oldChars) => [...oldChars, data]);
