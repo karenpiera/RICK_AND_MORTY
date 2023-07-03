@@ -2,14 +2,32 @@ import './App.css';
 import NavBar from './components/NavBar';
 import axios from 'axios';
 import Cards from './components/Cards.jsx';
-import { useState } from 'react';
-import { Route,Routes, } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import About from './components/about';
 import Detail from './components/detail';
-
+import Formulario from './components/formulario';
 
 function App() {
-const [characters,setCharacters] = useState([]);
+  const [access, setAccess] = useState(false);
+  const [characters, setCharacters] = useState([]);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const EMAIL = 'ejemplo@gmail.com';
+  const PASSWORD = '1Password';
+
+  function login(userData) {
+    if (userData.password === PASSWORD && userData.email === EMAIL) {
+      setAccess(true);
+      navigate('/home');
+    }
+  }
+
+  useEffect(() => {
+    !access && navigate('/');
+  }, [access]);
 
 
 function searchHandler (id){
@@ -19,7 +37,7 @@ function searchHandler (id){
       } else {
          window.alert('¡No hay personajes con este ID!');
       }
-   }) .catch(error=>alert("No se encontró el ID!!!"));
+   }).catch(error=>alert("No se encontró el ID!!!"));
 }
 
 const onClose = (id)=>{
@@ -55,9 +73,15 @@ function randomHandler (){
    return (
       
       <div className='App'>
-         <NavBar onSearch={searchHandler} random={randomHandler} />
+         {
+            location.pathname !== '/'&& <NavBar onSearch={searchHandler} random={randomHandler} />
+            
+         }
+         
           
 <Routes>
+
+   <Route path='/' element={<Formulario login={login} />}  />
    <Route path='/home' element={<Cards characters={characters} onClose={onClose} /> }/>
 
    <Route path='/detail/:id' element={<Detail/>}  />
