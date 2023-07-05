@@ -17,8 +17,51 @@
    -webkit-user-select: none;
    touch-action: manipulation;
  }  
-   .random :hover{  
+   .random:hover{  
+ 
+ color: rgb(9, 236, 17);
+ 
+   }
+   .about{
+    display: flow-root;
+    font-family:  'Knewave', cursive;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: rgb(100, 54, 227);
+    border: 2px solid rgb(6, 201, 240);
+    color: #020202;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+ }  
+   .about:hover{  
  
  color: rgb(9, 236, 17);
    }
  
+
+   .buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+  }
+  
+  .about {
+    /* Estilos de botón */
+    display: inline-flex;
+    border-radius: 4px;
+    
+    /* Otros estilos que desees aplicar */
+  }
+  
+  .about + .about {
+    margin-left: 20px; /* Espacio entre los botones */
+  }
+  

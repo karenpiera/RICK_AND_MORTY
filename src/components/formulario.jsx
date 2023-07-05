@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import style from "./formulario.module.css";
 
 function validatie(user) {
   let errors = {};
@@ -52,15 +53,13 @@ function Formulario({login}) {
   }
 
   return (
-    <div>
-      <div>
-        <h1>Fill Your Credentials</h1>
-      </div>
+    <div className={style.container} >
+    
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={style.form} >
         <div>
-          <label htmlFor="email">Username</label>
-          <input type="text" name="email" value={user.email} onChange={handleChange} />
+          <label htmlFor="email"  className={style.label} >Username</label>
+          <input type="text" name="email" value={user.email} onChange={handleChange}  className={style.input}/>
           {errors.email && <span>{errors.email}</span>}
         </div>
 
@@ -69,7 +68,7 @@ function Formulario({login}) {
           <input type="password" name="password" value={user.password} onChange={handleChange} />
           {errors.password && <span>{errors.password}</span>}
         </div>
-        <button type="submit">LOGIN</button>
+        <button type="submit" className={style.button} >LOGIN</button>
       </form>
     </div>
   );

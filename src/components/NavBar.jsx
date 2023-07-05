@@ -6,12 +6,15 @@ import style from "./Nav.module.css";
 
     return (
        
-    <div className="nav-container">
-        <div>
-            <Link to="/about" > About</Link>
-            <Link to="/home" >Home </Link>
+    <div >
+  <Link to="/about" className={style.about}>
+  <span color="black">About</span>
+</Link>
 
-        </div>
+<Link to="/home" className={style.about}>
+  <span>Home</span>
+</Link>
+       
 
     <SearchBar onSearch={onSearch}/>
     <button  className={style.random} onClick={random}> Random </button>
