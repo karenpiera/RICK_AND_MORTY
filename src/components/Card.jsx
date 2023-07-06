@@ -1,13 +1,22 @@
 import { Link } from "react-router-dom";
 import {  connect } from "react-redux";
 import { addFavorito,removeFavorito } from "../redux/actions";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import style from "./card.module.css"
 
  function Card(props) {
-   const {character,onClose,addFavorito,removeFavorito,favorites} = props;
+   const {character,onClose,addFavorito,removeFavorito,favorites,} = props;
+  
+   
 
    const [fav, setFav] = useState(false);
+   useEffect(() => {
+      favorites.forEach((fav) => {
+         if (fav.id === character.id) {
+            setFav(true);
+         }
+      });
+   }, [favorites]);
 
   function handleFavorite(character){
 

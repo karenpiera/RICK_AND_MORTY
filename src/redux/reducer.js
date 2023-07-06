@@ -15,7 +15,7 @@ return{
 case REMOVE_FAV:
     return {
         ...state,
-        myFavorito:state.myFavorito.filter(character=>character.id !== Number(action))
+        myFavorito: state.myFavorito.filter(character => character.id !== Number(action.payload))
     }
 
 

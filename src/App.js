@@ -7,6 +7,7 @@ import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import About from './components/about';
 import Detail from './components/detail';
 import Formulario from './components/formulario';
+import Favorites from './components/favorites';
 
 function App() {
   const [access, setAccess] = useState(false);
@@ -85,6 +86,7 @@ function randomHandler (){
    <Route path='/home' element={<Cards characters={characters} onClose={onClose} /> }/>
 
    <Route path='/detail/:id' element={<Detail/>}  />
+   <Route path='/favorites'  element={<Favorites/>}/>
 
    <Route path='/about' element={<About/>} />
    

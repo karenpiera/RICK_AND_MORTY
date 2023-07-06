@@ -7,13 +7,18 @@ import style from "./Nav.module.css";
     return (
        
     <div >
+<Link to="/favorites" className={style.about} >
+  <span>Favoritos</span>
+  </Link>
+ 
+ <Link to="/home" className={style.about} >
+  <span>Home</span>
+</Link>
+
   <Link to="/about" className={style.about}>
   <span >About</span>
 </Link>
 
-<Link to="/home" className={style.about} >
-  <span>Home</span>
-</Link>
        
 
     <SearchBar onSearch={onSearch}/>
