@@ -8,10 +8,10 @@ import style from "./Nav.module.css";
        
     <div >
   <Link to="/about" className={style.about}>
-  <span color="black">About</span>
+  <span >About</span>
 </Link>
 
-<Link to="/home" className={style.about}>
+<Link to="/home" className={style.about} >
   <span>Home</span>
 </Link>
        
