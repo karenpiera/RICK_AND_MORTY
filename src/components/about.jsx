@@ -3,7 +3,7 @@ function About (){
 
     return (
         <div>
-            <h1> ALLA TAN PROGRAMANDO </h1>
+            <h1> APRENDIENDO PASITO  A PASITO </h1>
         </div>
     )
 }
