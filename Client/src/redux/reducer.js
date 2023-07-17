@@ -8,19 +8,10 @@ let initialState = {
 function rootReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_FAV:
-      return {
-        ...state,
-        myFavorito: [...state.myFavorito, action.payload],
-        allCharacters: [...state.allCharacters, action.payload],
-      };
+      return { ...state,  myFavorito: action.payload, allCharacters: action.payload };
 
     case REMOVE_FAV:
-      return {
-        ...state,
-        myFavorito: state.myFavorito.filter(
-          (character) => character.id !== Number(action.payload)
-        ),
-      };
+      return { ...state,  myFavorito: action.payload};
 
     case ORDER:
       let ordenados;

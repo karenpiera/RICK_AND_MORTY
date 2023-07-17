@@ -21,9 +21,11 @@ import style from "./card.module.css"
   function handleFavorite(character){
 
    if(!fav){
+     
       addFavorito(character)
        setFav(true)
    } else {
+     
       removeFavorito(character)
          setFav(false)
    }
